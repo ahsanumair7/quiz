@@ -125,4 +125,4 @@ class QuizCapabilityCapability(MatchingCapability):
         self.capability_worker = CapabilityWorker(self.worker)
 
         # Start the quiz functionality
-        asyncio.create_task(self.run_quiz())
+        self.worker.session_tasks.create(self.run_quiz())
